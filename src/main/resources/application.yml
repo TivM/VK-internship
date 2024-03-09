@@ -1,0 +1,14 @@
+posts:
+  url:
+    base: https://jsonplaceholder.typicode.com/posts
+
+users:
+  url:
+    base: https://jsonplaceholder.typicode.com/users
+
+app:
+  url:
+    base: http://localhost:8080
+
+webclient:
+  timeout: 1000
