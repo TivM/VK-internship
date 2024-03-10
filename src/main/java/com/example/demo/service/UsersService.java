@@ -8,4 +8,8 @@ public interface UsersService {
     GetUserResponse[] getAll();
 
     AddUserResponse add(String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company);
+
+    UpdateUserResponse update(Integer id, String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company);
+
+    Void delete(Integer id);
 }

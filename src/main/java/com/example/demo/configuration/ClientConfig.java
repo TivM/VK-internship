@@ -1,8 +1,10 @@
 package com.example.demo.configuration;
 
 
+import com.example.demo.client.api.JsonPlaceholderAlbumsClient;
 import com.example.demo.client.api.JsonPlaceholderPostsClient;
 import com.example.demo.client.api.JsonPlaceholderUsersClient;
+import com.example.demo.client.webclient.JsonPlaceholderAlbumsWebClient;
 import com.example.demo.client.webclient.JsonPlaceholderPostsWebClient;
 import com.example.demo.client.webclient.JsonPlaceholderUsersWebClient;
 import io.netty.channel.ChannelOption;
@@ -52,6 +54,14 @@ public class ClientConfig {
             @Value("${users.url.base}") String baseUrl
     ) {
         return new JsonPlaceholderUsersWebClient(webClient, baseUrl);
+    }
+
+    @Bean
+    public JsonPlaceholderAlbumsClient jsonPlaceholderAlbumsWebClient(
+            WebClient webClient,
+            @Value("${albums.url.base}") String baseUrl
+    ) {
+        return new JsonPlaceholderAlbumsWebClient(webClient, baseUrl);
     }
 
 }

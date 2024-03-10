@@ -9,7 +9,7 @@ public interface JsonPlaceholderUsersClient {
 
     AddUserResponse addUser(String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company);
 
-    //UpdatePostResponse updatePost(Integer id, String title, String body);
+    UpdateUserResponse updateUser(Integer id, String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company);
 
-    //Void deletePost(Integer id);
+    Void deleteUser(Integer id);
 }

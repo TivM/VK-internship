@@ -6,6 +6,10 @@ users:
   url:
     base: https://jsonplaceholder.typicode.com/users
 
+albums:
+  url:
+    base: https://jsonplaceholder.typicode.com/albums
+
 app:
   url:
     base: http://localhost:8080

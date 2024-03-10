@@ -27,4 +27,18 @@ public class UsersController {
                 addUserRequest.name(), addUserRequest.email(), addUserRequest.address(),addUserRequest.phone(), addUserRequest.website(), addUserRequest.company()
         );
     }
+
+    @PutMapping ("/api/users/{id}")
+    public UpdateUserResponse updateUserById(
+            @PathVariable Integer id,
+            @RequestBody UpdateUserRequest updateUserRequest){
+        return usersService.update(
+                id, updateUserRequest.name(), updateUserRequest.email(), updateUserRequest.address(),
+                updateUserRequest.phone(), updateUserRequest.website(), updateUserRequest.company());
+    }
+
+    @DeleteMapping ("/api/posts/{id}")
+    public Void deleteUserById(@PathVariable Integer id){
+        return usersService.delete(id);
+    }
 }

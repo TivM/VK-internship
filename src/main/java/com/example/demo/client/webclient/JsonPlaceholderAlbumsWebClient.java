@@ -1,72 +1,71 @@
 package com.example.demo.client.webclient;
 
-import com.example.demo.client.api.JsonPlaceholderUsersClient;
+import com.example.demo.client.api.JsonPlaceholderAlbumsClient;
 import com.example.demo.client.dto.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
-public class JsonPlaceholderUsersWebClient implements JsonPlaceholderUsersClient {
-
-    private static final String BASE_URL = "https://jsonplaceholder.typicode.com/users";
+public class JsonPlaceholderAlbumsWebClient implements JsonPlaceholderAlbumsClient {
+    private static final String BASE_URL = "https://jsonplaceholder.typicode.com/albums";
 
     private final WebClient webClient;
     private final String baseUrl;
 
-    public JsonPlaceholderUsersWebClient(WebClient webClient) {
+    public JsonPlaceholderAlbumsWebClient(WebClient webClient) {
         this.webClient = webClient;
         this.baseUrl = BASE_URL;
     }
 
-    public JsonPlaceholderUsersWebClient(WebClient webClient, String baseUrl) {
+    public JsonPlaceholderAlbumsWebClient(WebClient webClient, String baseUrl) {
         this.webClient = webClient;
         this.baseUrl = baseUrl;
     }
 
     @Override
-    public GetUserResponse getUserById(Integer id) {
+    public GetAlbumResponse getAlbumById(Integer id) {
         return webClient
                 .get()
                 .uri(baseUrl + "/" + id.toString())
                 .retrieve()
-                .bodyToMono(GetUserResponse.class)
+                .bodyToMono(GetAlbumResponse.class)
                 .block();
     }
 
     @Override
-    public GetUserResponse[] getAllUsers() {
+    public GetAlbumResponse[] getAllAlbums() {
         return webClient
                 .get()
                 .uri(baseUrl)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
-                .bodyToMono(GetUserResponse[].class)
+                .bodyToMono(GetAlbumResponse[].class)
                 .block();
     }
 
     @Override
-    public AddUserResponse addUser(String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company) {
+    public AddAlbumResponse addAlbum(Integer userId, String title) {
         return webClient
                 .post()
                 .uri(baseUrl)
-                .bodyValue(new AddUserRequest(name, email, address, phone, website, company))
+                .bodyValue(new AddAlbumRequest(userId, title))
                 .retrieve()
-                .bodyToMono(AddUserResponse.class)
+                .bodyToMono(AddAlbumResponse.class)
                 .block();
     }
 
     @Override
-    public UpdateUserResponse updateUser(Integer id, String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company) {
+    public UpdateAlbumResponse updateAlbum(Integer id, String title) {
         return webClient
                 .put()
                 .uri(baseUrl + "/" + id.toString())
-                .bodyValue(new UpdateUserRequest(name, email, address, phone, website, company))
+                .bodyValue(new UpdateAlbumRequest(title))
                 .retrieve()
-                .bodyToMono(UpdateUserResponse.class)
+                .bodyToMono(UpdateAlbumResponse.class)
                 .block();
     }
 
     @Override
-    public Void deleteUser(Integer id) {
+    public Void deleteAlbum(Integer id) {
         return webClient
                 .delete()
                 .uri(baseUrl + "/" + id.toString())
