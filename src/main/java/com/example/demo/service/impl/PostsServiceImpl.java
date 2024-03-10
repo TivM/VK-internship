@@ -6,6 +6,7 @@ import com.example.demo.client.dto.GetPostResponse;
 import com.example.demo.client.dto.UpdatePostResponse;
 import com.example.demo.service.PostsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 
@@ -15,11 +16,13 @@ public class PostsServiceImpl implements PostsService {
 
     private final JsonPlaceholderPostsClient postsClient;
     @Override
+    @Cacheable(value = "posts", unless = "#result == null")
     public GetPostResponse[] getAll() {
         return postsClient.getAllPosts();
     }
 
     @Override
+    @Cacheable(value = "posts", unless = "#result == null")
     public GetPostResponse getById(Integer id) {
         return postsClient.getPostById(id);
     }

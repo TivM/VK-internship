@@ -4,6 +4,7 @@ import com.example.demo.client.api.JsonPlaceholderUsersClient;
 import com.example.demo.client.dto.*;
 import com.example.demo.service.UsersService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,11 +14,13 @@ public class UsersServiceImpl implements UsersService {
     private final JsonPlaceholderUsersClient usersClient;
 
     @Override
+    @Cacheable(value = "users", unless = "#result == null")
     public GetUserResponse getById(Integer id) {
         return usersClient.getUserById(id);
     }
 
     @Override
+    @Cacheable(value = "users", unless = "#result == null")
     public GetUserResponse[] getAll() {
         return usersClient.getAllUsers();
     }

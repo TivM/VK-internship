@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.client.dto.*;
 import com.example.demo.service.UsersService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
