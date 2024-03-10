@@ -6,7 +6,7 @@ public record RegisterRequest(
         String firstname,
         String lastname,
         String email,
-        String password
-        //Role role
+        String password,
+        Role role
 
 ) {}

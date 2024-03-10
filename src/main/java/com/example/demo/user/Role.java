@@ -53,10 +53,7 @@ public enum Role {
     ),
     ALBUMS(
             Set.of(
-                    ALBUMS_READ,
-                    ALBUMS_UPDATE,
-                    ALBUMS_DELETE,
-                    ALBUMS_CREATE
+                    ALBUMS_READ
             )
     )
 

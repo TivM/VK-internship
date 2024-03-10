@@ -37,7 +37,7 @@ public class UsersController {
                 updateUserRequest.phone(), updateUserRequest.website(), updateUserRequest.company());
     }
 
-    @DeleteMapping ("/api/posts/{id}")
+    @DeleteMapping ("/api/users/{id}")
     public Void deleteUserById(@PathVariable Integer id){
         return usersService.delete(id);
     }
