@@ -1,16 +1,13 @@
 package com.example.demo.client.api;
 
-import com.example.demo.client.dto.AddPostResponse;
-import com.example.demo.client.dto.GetPostResponse;
-import com.example.demo.client.dto.GetUserResponse;
-import com.example.demo.client.dto.UpdatePostResponse;
+import com.example.demo.client.dto.*;
 
 public interface JsonPlaceholderUsersClient {
-    //GetPostResponse[] getAllPosts();
+    GetUserResponse[] getAllUsers();
 
     GetUserResponse getUserById(Integer id);
 
-    //AddPostResponse addPost(String title, String body, Integer userId);
+    AddUserResponse addUser(String name, String email, UserAddressResponse address, String phone, String website, UserCompanyResponse company);
 
     //UpdatePostResponse updatePost(Integer id, String title, String body);
 

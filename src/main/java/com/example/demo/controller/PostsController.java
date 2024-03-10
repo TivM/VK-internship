@@ -22,7 +22,7 @@ public class PostsController {
     }
 
     @PostMapping ("/api/posts")
-    public AddPostResponse getPostById(@RequestBody AddPostRequest addPostRequest){
+    public AddPostResponse addPost(@RequestBody AddPostRequest addPostRequest){
         return postsService.add(addPostRequest.title(), addPostRequest.body(), addPostRequest.userId());
     }
 
@@ -37,6 +37,5 @@ public class PostsController {
     public Void deletePostById(@PathVariable Integer id){
         return postsService.delete(id);
     }
-
 
 }

@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  postgresql:
+    image: postgres:14
+    container_name: vk
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=vk
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+
+    networks:
+      - backend
+
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+
+volumes:
+  postgresql-data:
+    name: postgres-data-volume
+
+
+networks:
+  backend:
