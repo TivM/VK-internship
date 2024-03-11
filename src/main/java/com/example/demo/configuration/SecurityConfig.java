@@ -1,5 +1,6 @@
 package com.example.demo.configuration;
 
+import com.example.demo.auth.AuthEntryPointReject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,7 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
+    private final AuthEntryPointReject authEntryPointReject;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -46,6 +48,7 @@ public class SecurityConfig {
                                 .anyRequest()
                                 .authenticated()
                 )
+                .exceptionHandling(exception -> exception.authenticationEntryPoint(authEntryPointReject))
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

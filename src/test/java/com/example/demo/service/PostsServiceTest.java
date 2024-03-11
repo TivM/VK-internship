@@ -27,7 +27,7 @@ public class PostsServiceTest {
     private JsonPlaceholderPostsClient client;
 
     @Test
-    void testFindBookById() {
+    void getById__getPostById_returnGetPostResponse() {
         final int postId = 1;
 
         GetPostResponse post = service.getById(postId);
