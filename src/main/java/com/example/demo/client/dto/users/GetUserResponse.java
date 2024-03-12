@@ -1,6 +1,7 @@
-package com.example.demo.client.dto;
+package com.example.demo.client.dto.users;
 
-public record AddUserRequest(
+public record GetUserResponse(
+        Integer id,
         String name,
         String email,
         UserAddressResponse address,

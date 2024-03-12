@@ -1,6 +1,4 @@
-package com.example.demo.client.dto;
-
-import java.util.List;
+package com.example.demo.client.dto.users;
 
 public record UserAddressResponse(
         String street,

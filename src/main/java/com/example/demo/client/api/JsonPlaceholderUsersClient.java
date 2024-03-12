@@ -1,6 +1,6 @@
 package com.example.demo.client.api;
 
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.users.*;
 
 public interface JsonPlaceholderUsersClient {
     GetUserResponse[] getAllUsers();

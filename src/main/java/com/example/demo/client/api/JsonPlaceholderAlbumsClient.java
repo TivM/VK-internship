@@ -1,6 +1,8 @@
 package com.example.demo.client.api;
 
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.albums.AddAlbumResponse;
+import com.example.demo.client.dto.albums.GetAlbumResponse;
+import com.example.demo.client.dto.albums.UpdateAlbumResponse;
 
 public interface JsonPlaceholderAlbumsClient {
     GetAlbumResponse[] getAllAlbums();

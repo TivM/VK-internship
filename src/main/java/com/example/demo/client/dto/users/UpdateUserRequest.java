@@ -1,9 +1,6 @@
-package com.example.demo.client.dto;
+package com.example.demo.client.dto.users;
 
-import java.util.List;
-
-public record GetUserResponse(
-        Integer id,
+public record UpdateUserRequest(
         String name,
         String email,
         UserAddressResponse address,

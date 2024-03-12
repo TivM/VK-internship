@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.posts.AddPostResponse;
+import com.example.demo.client.dto.posts.GetPostResponse;
+import com.example.demo.client.dto.posts.UpdatePostResponse;
 
 public interface PostsService {
     GetPostResponse[] getAll();

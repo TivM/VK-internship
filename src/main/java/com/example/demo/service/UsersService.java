@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.users.*;
 
 public interface UsersService {
     GetUserResponse getById(Integer id);

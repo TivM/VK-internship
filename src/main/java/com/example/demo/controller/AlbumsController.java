@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.albums.*;
 import com.example.demo.service.AlbumsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,7 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.client.api.JsonPlaceholderUsersClient;
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.users.*;
 import com.example.demo.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;

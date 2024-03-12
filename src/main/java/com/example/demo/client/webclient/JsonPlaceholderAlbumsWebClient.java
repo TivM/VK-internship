@@ -1,7 +1,7 @@
 package com.example.demo.client.webclient;
 
 import com.example.demo.client.api.JsonPlaceholderAlbumsClient;
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.albums.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 

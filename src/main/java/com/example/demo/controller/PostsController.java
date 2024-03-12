@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.client.dto.*;
+import com.example.demo.client.dto.posts.*;
 import com.example.demo.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

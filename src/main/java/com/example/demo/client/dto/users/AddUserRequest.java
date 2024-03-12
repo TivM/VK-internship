@@ -1,6 +1,6 @@
-package com.example.demo.client.dto;
+package com.example.demo.client.dto.users;
 
-public record UpdateUserRequest(
+public record AddUserRequest(
         String name,
         String email,
         UserAddressResponse address,

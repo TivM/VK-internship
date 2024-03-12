@@ -1,4 +1,4 @@
-package com.example.demo.client.dto;
+package com.example.demo.client.dto.albums;
 
 public record AddAlbumRequest(
         Integer userId,

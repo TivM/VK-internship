@@ -1,9 +1,9 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.client.api.JsonPlaceholderPostsClient;
-import com.example.demo.client.dto.AddPostResponse;
-import com.example.demo.client.dto.GetPostResponse;
-import com.example.demo.client.dto.UpdatePostResponse;
+import com.example.demo.client.dto.posts.AddPostResponse;
+import com.example.demo.client.dto.posts.GetPostResponse;
+import com.example.demo.client.dto.posts.UpdatePostResponse;
 import com.example.demo.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
