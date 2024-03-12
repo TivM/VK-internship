@@ -48,4 +48,17 @@ public class AlbumsServiceTest {
 
         verify(client, times(1)).getAllAlbums();
     }
+
+    @Test
+    void delete_deleteAlbumAndCacheEvict_callGetByIdTwoTimes() {
+        final int albumId = 1;
+
+        service.getById(albumId);
+
+        service.delete(albumId);
+
+        service.getById(albumId);
+
+        verify(client, times(2)).getAlbumById(albumId);
+    }
 }

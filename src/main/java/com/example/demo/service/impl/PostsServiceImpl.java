@@ -6,6 +6,7 @@ import com.example.demo.client.dto.posts.GetPostResponse;
 import com.example.demo.client.dto.posts.UpdatePostResponse;
 import com.example.demo.service.PostsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,7 @@ public class PostsServiceImpl implements PostsService {
     }
 
     @Override
+    @CacheEvict(value = "posts", key = "#id")
     public Void delete(Integer id) {
         return postsClient.deletePost(id);
     }

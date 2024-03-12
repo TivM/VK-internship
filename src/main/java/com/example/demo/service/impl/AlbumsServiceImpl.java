@@ -6,6 +6,7 @@ import com.example.demo.client.dto.albums.GetAlbumResponse;
 import com.example.demo.client.dto.albums.UpdateAlbumResponse;
 import com.example.demo.service.AlbumsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,7 @@ public class AlbumsServiceImpl implements AlbumsService {
     }
 
     @Override
+    @CacheEvict(value = "albums", key = "#id")
     public Void delete(Integer id) {
         return albumsClient.deleteAlbum(id);
     }

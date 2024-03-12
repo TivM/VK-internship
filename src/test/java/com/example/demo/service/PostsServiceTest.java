@@ -24,7 +24,7 @@ public class PostsServiceTest {
     private JsonPlaceholderPostsClient client;
 
     @Test
-    void getById__getPostByIdFromCache_returnGetPostResponseFromCache() {
+    void getById__getPostByIdFromCache_returnGetPostResponse() {
         final int postId = 1;
 
         GetPostResponse post = service.getById(postId);
@@ -45,5 +45,18 @@ public class PostsServiceTest {
         assertNotNull(cachedPosts, "Posts is not found");
 
         verify(client, times(1)).getAllPosts();
+    }
+
+    @Test
+    void delete_deletePostAndCacheEvict_callGetByIdTwoTimes() {
+        final int postId = 1;
+
+        service.getById(postId);
+
+        service.delete(postId);
+
+        service.getById(postId);
+
+        verify(client, times(2)).getPostById(postId);
     }
 }

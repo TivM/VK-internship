@@ -4,6 +4,7 @@ import com.example.demo.client.api.JsonPlaceholderUsersClient;
 import com.example.demo.client.dto.users.*;
 import com.example.demo.service.UsersService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -36,6 +37,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    @CacheEvict(value = "users", key = "#id")
     public Void delete(Integer id) {
         return usersClient.deleteUser(id);
     }
