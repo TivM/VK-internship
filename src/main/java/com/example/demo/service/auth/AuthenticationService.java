@@ -1,5 +1,8 @@
-package com.example.demo.auth;
+package com.example.demo.service.auth;
 
+import com.example.demo.auth.AuthenticationRequest;
+import com.example.demo.auth.AuthenticationResponse;
+import com.example.demo.auth.RegisterRequest;
 import com.example.demo.service.jwt.JwtService;
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
@@ -25,7 +28,7 @@ public class AuthenticationService {
                 .password(passwordEncoder.encode(request.password()))
                 .role(request.role())
                 .build();
-        var savedUser = repository.save(user);
+        repository.save(user);
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .accessToken(jwtToken)

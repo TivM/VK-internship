@@ -1,9 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.client.api.JsonPlaceholderAlbumsClient;
-import com.example.demo.client.api.JsonPlaceholderPostsClient;
 import com.example.demo.client.dto.albums.GetAlbumResponse;
-import com.example.demo.client.dto.posts.GetPostResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

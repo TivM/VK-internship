@@ -1,5 +1,9 @@
-package com.example.demo.auth;
+package com.example.demo.controller;
 
+import com.example.demo.auth.AuthenticationRequest;
+import com.example.demo.auth.AuthenticationResponse;
+import com.example.demo.service.auth.AuthenticationService;
+import com.example.demo.auth.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

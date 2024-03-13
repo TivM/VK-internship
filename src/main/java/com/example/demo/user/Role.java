@@ -14,7 +14,6 @@ import static com.example.demo.user.Permission.*;
 @Getter
 @RequiredArgsConstructor
 public enum Role {
-    USER(Collections.emptySet()),
     ADMIN(
             Set.of(
                     ADMIN_READ,
